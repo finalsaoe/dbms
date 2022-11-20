@@ -1,0 +1,12 @@
+use student;
+db.createCollection("Student");
+db.Student.insert({roll_no:1,name:"John",Class:"TE-A",Address:"Katraj",age:20,fees:2000});
+db.Student.insert({roll_no:2,name:"David",Class:"TE-B",Address:"Camp",age:19,fees:3000});
+db.Student.insert({roll_no:3,name:"Drake",Class:"TE-C",Address:"Pimpri",age:21,fees:4000});
+db.Student.insert({roll_no:4,name:"Rocket",Class:"TE-A",Address:"Kondhwa",age:21,fees:4500});
+db.Student.find().pretty();
+db.Student.update({roll_no:2},{$set : {name:"Sham"} } );
+db.Student.update( {roll_no:4},{$set : {Address:"FC ROAD"}} );
+db.Student.find().pretty();
+db.Student.remove({roll_no:1});
+db.Student.find().pretty();
